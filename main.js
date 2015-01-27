@@ -43,6 +43,19 @@ function *callAsync(func) {
 	return single_async_obj.results;
 }
 
+function convertAsyncFunc(func) {
+	var self = this;
+	return function* () {
+		var args = Array.prototype.slice.call(arguments);
+
+		return yield* callAsync(function(cb){
+			args.push(cb);
+			func.apply(self, args);
+		});
+	}
+}
+
+
 function *sleep(ms) {
 	yield* callAsync(function(cb) {
 		setTimeout(cb, ms);
@@ -90,5 +103,6 @@ module.exports = {
 	spawn: spawn,
 
 	callAsync:callAsync,
+	convertAsyncFunc: convertAsyncFunc,
 	sleep: sleep
 }
