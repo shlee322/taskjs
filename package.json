@@ -1,0 +1,7 @@
+{
+    "name": "task",
+    "version": "0.0.1-dev",
+    "description": "ES6(iojs) generator base async module",
+    "keywords": ["generator", "coroutine", "microthread", "iojs"],
+    "main": "main.js"
+}
