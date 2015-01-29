@@ -4,6 +4,13 @@ TaskJS
 ES6(iojs) generator base async module
 
 
+APIs
+===================
+
+- `task.spawn(func, [callback[, error]]);`
+- `task.sleep(ms)`
+- `Function.task(thisObj, args...)`
+
 
 Example
 ===================
@@ -11,7 +18,6 @@ Example
 ```javascript
 var fs = require('fs');
 var task = require('task');
-require('task/modules/fs'); // file system
 
 
 function * test_func() {
@@ -23,11 +29,11 @@ function * test_func() {
 	yield* task.sleep(1000);
 	console.log('test4');
 
-	console.log(yield* fs.statTask('/tmp'));
+	console.log(yield* fs.stat.task(null, '/tmp'));
 
 	//try catch test
 	try {
-		console.log(yield* fs.statTask('---'));
+		console.log(yield* fs.stat.task(null, '---'));
 	} catch (err) {
 		console.log(err);
 	}
