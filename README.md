@@ -43,3 +43,17 @@ function * test_func() {
 task.spawn(test_func);
 ```
 
+```javascript
+// request test
+
+var task = require('task');
+var request = require('request');
+
+task.spawn(function *() {
+    var result = yield* request.task(null, 'http://www.google.com');
+
+    if (!error && result[0].statusCode == 200) {
+        console.log(result[1]) // Print the google web page. 
+    }
+});
+```

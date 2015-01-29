@@ -3,5 +3,17 @@
     "version": "0.0.1-dev",
     "description": "ES6(iojs) generator base async module",
     "keywords": ["generator", "coroutine", "microthread", "iojs"],
+    "author": "Lee Sanghyuck <shlee322@elab.kr>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shlee322/taskjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/shlee322/taskjs/issues"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10.24"
+    },
     "main": "main.js"
 }
