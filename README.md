@@ -1,7 +1,10 @@
 TaskJS
 ===================
 
+[![npm package](https://nodei.co/npm/node-taskjs.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-taskjs/)
+
 ES6(iojs) generator base async module
+
 
 
 APIs
@@ -17,8 +20,7 @@ Example
 
 ```javascript
 var fs = require('fs');
-var task = require('task');
-
+var task = require('node-taskjs');
 
 function * test_func() {
 	console.log('test');
@@ -39,14 +41,13 @@ function * test_func() {
 	}
 }
 
-
 task.spawn(test_func);
 ```
 
 ```javascript
 // request test
 
-var task = require('task');
+var task = require('node-taskjs');
 var request = require('request');
 
 task.spawn(function *() {
