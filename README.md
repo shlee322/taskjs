@@ -45,16 +45,17 @@ task.spawn(test_func);
 ```
 
 ```javascript
-// request test
-
 var task = require('node-taskjs');
 var request = require('request');
 
 task.spawn(function *() {
-    var result = yield* request.task(null, 'http://www.google.com');
-
-    if (!error && result[0].statusCode == 200) {
-        console.log(result[1]) // Print the google web page. 
+    try {
+        var result = yield* request.task(null, 'http://www.google.com/asfdsdf');
+        if (result[0].statusCode != 200) throw result[0].statusCode;
+        console.log(result[1]);
+    } catch (err) {
+        //error
+        console.log(err);
     }
 });
 ```
