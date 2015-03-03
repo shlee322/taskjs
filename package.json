@@ -1,6 +1,6 @@
 {
     "name": "node-taskjs",
-    "version": "0.0.1-dev",
+    "version": "0.0.1-dev2",
     "description": "ES6(iojs) generator base async module",
     "keywords": ["generator", "coroutine", "microthread", "iojs"],
     "author": "Lee Sanghyuck <shlee322@elab.kr>",

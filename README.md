@@ -45,6 +45,8 @@ task.spawn(test_func);
 ```
 
 ```javascript
+// request test
+
 var task = require('node-taskjs');
 var request = require('request');
 
